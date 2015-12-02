@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>typeName</key>
+		<string>新歌首发</string>
+		<key>typeImageName</key>
+		<string>online-back-rank.jpg</string>
+		<key>typeUrl</key>
+		<string>http://www.zhaoshen.com</string>
+	</dict>
+	<dict>
+		<key>typeName</key>
+		<string>排行</string>
+		<key>typeImageName</key>
+		<string>online-back-ttfm.png</string>
+		<key>typeUrl</key>
+		<string>http://www.zhaoshen.com</string>
+	</dict>
+	<dict>
+		<key>typeName</key>
+		<string>歌手</string>
+		<key>typeImageName</key>
+		<string>online-back-singer.jpg</string>
+		<key>typeUrl</key>
+		<string>http://www.zhaoshen.com</string>
+	</dict>
+	<dict>
+		<key>typeName</key>
+		<string>分类</string>
+		<key>typeImageName</key>
+		<string>online-back-cat.jpg</string>
+		<key>typeUrl</key>
+		<string>http://www.zhaoshen.com</string>
+	</dict>
+	<dict>
+		<key>typeName</key>
+		<string>大家在听</string>
+		<key>typeImageName</key>
+		<string>online-back-mv.jpg</string>
+		<key>typeUrl</key>
+		<string>http://www.zhaoshen.com</string>
+	</dict>
+</array>
+</plist>

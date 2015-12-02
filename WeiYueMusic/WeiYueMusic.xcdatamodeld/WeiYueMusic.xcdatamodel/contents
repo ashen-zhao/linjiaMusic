@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="PlayRecordEntity" representedClassName="PlayRecordEntity" syncable="YES">
+        <attribute name="autoID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="songFrom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="songID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="songImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="songName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="songPlayCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="songSinger" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="songUrl" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PlayRecordEntity" positionX="-54" positionY="-9" width="128" height="163"/>
+    </elements>
+</model>
