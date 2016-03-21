@@ -17,6 +17,7 @@
 		8C21144C1C1FA59600B766FD /* singer.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2114421C1FA59600B766FD /* singer.png */; };
 		8C21144D1C1FA59600B766FD /* type.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2114431C1FA59600B766FD /* type.png */; };
 		8C21144E1C1FA59600B766FD /* week.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2114441C1FA59600B766FD /* week.png */; };
+		8C98EFBB1C85329C00CA5D8D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C98EFBA1C85329C00CA5D8D /* MainViewController.m */; };
 		8CE10BC21BEC8B26001DFE4F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE10BB01BEC8B26001DFE4F /* AFHTTPRequestOperation.m */; };
 		8CE10BC31BEC8B26001DFE4F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE10BB21BEC8B26001DFE4F /* AFHTTPRequestOperationManager.m */; };
 		8CE10BC41BEC8B26001DFE4F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE10BB41BEC8B26001DFE4F /* AFHTTPSessionManager.m */; };
@@ -70,7 +71,6 @@
 		C2D7670C1B4F9A350067F2EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D7670A1B4F9A350067F2EB /* LaunchScreen.xib */; };
 		C2D767181B4F9A350067F2EB /* WeiYueMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D767171B4F9A350067F2EB /* WeiYueMusicTests.m */; };
 		C2D767341B4F9AEF0067F2EB /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D767331B4F9AEF0067F2EB /* UINavigationController+FDFullscreenPopGesture.m */; };
-		C2D767371B4F9B840067F2EB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D767361B4F9B840067F2EB /* MainViewController.m */; };
 		C2D95EA71B53982A00064C03 /* SingerTypeController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D95EA61B53982A00064C03 /* SingerTypeController.m */; };
 		C2D95EAA1B5398D900064C03 /* SingerCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D95EA91B5398D900064C03 /* SingerCollectionCell.m */; };
 		C2D95EAD1B53A25A00064C03 /* SingerTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D95EAC1B53A25A00064C03 /* SingerTypeModel.m */; };
@@ -216,6 +216,8 @@
 		8C2114421C1FA59600B766FD /* singer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = singer.png; sourceTree = "<group>"; };
 		8C2114431C1FA59600B766FD /* type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type.png; sourceTree = "<group>"; };
 		8C2114441C1FA59600B766FD /* week.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = week.png; sourceTree = "<group>"; };
+		8C98EFB91C85329C00CA5D8D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = WeiYueMusic/ViewControllers/MainViewController.h; sourceTree = SOURCE_ROOT; };
+		8C98EFBA1C85329C00CA5D8D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = WeiYueMusic/ViewControllers/MainViewController.m; sourceTree = SOURCE_ROOT; };
 		8CE10BAF1BEC8B26001DFE4F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		8CE10BB01BEC8B26001DFE4F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		8CE10BB11BEC8B26001DFE4F /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -301,8 +303,6 @@
 		C2D767171B4F9A350067F2EB /* WeiYueMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeiYueMusicTests.m; sourceTree = "<group>"; };
 		C2D767321B4F9AEF0067F2EB /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		C2D767331B4F9AEF0067F2EB /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
-		C2D767351B4F9B840067F2EB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../../ViewControllers/MainViewController.h; sourceTree = "<group>"; };
-		C2D767361B4F9B840067F2EB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../../ViewControllers/MainViewController.m; sourceTree = "<group>"; };
 		C2D95EA51B53982A00064C03 /* SingerTypeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingerTypeController.h; sourceTree = "<group>"; };
 		C2D95EA61B53982A00064C03 /* SingerTypeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingerTypeController.m; sourceTree = "<group>"; };
 		C2D95EA81B5398D900064C03 /* SingerCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingerCollectionCell.h; sourceTree = "<group>"; };
@@ -1016,8 +1016,8 @@
 		C2E42FB61B4FBE1B0013A768 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C2D767351B4F9B840067F2EB /* MainViewController.h */,
-				C2D767361B4F9B840067F2EB /* MainViewController.m */,
+				8C98EFB91C85329C00CA5D8D /* MainViewController.h */,
+				8C98EFBA1C85329C00CA5D8D /* MainViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1388,7 +1388,6 @@
 				C2CE46071B5A325D000B01C6 /* CleanCaches.m in Sources */,
 				C2E42FA41B4FBD590013A768 /* MusicHotViewController.m in Sources */,
 				C2E430251B50C28C0013A768 /* TAAbstractDotView.m in Sources */,
-				C2D767371B4F9B840067F2EB /* MainViewController.m in Sources */,
 				C2E430941B50C2E60013A768 /* SDWebImageDecoder.m in Sources */,
 				C2D95EB01B53A53A00064C03 /* SingerModel.m in Sources */,
 				C22203821B5608C800D19627 /* CollectionHeaderView.m in Sources */,
@@ -1427,6 +1426,7 @@
 				C2E430971B50C2E60013A768 /* SDWebImageManager.m in Sources */,
 				C2E4308B1B50C2E60013A768 /* MJRefreshLegendFooter.m in Sources */,
 				C2D767341B4F9AEF0067F2EB /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				8C98EFBB1C85329C00CA5D8D /* MainViewController.m in Sources */,
 				C2D44AE81B56B1B100B05F69 /* SwipeView.m in Sources */,
 				C2D44B201B58A73900B05F69 /* RecordController.m in Sources */,
 				C2E430A21B50C3070013A768 /* MusicHotModel.m in Sources */,

@@ -186,10 +186,8 @@
 //请求数据
 - (void)readHotData {
 
-  [NetworkHelper JsonDataWithUrl:@"http://online.dongting.com/recomm/recomm_modules" success:^(id data) {
-   
-      NSDictionary *outDict = data[@"data"];
-      NSArray *sectionArr = outDict[@"songlists"];
+  [NetworkHelper JsonDataWithUrl:@"http://api.dongting.com/frontpage/frontpage" success:^(id data) {
+      NSArray *sectionArr = data[@"data"];
       //分区标识
       int i = 0;
       for (NSDictionary *dict1  in sectionArr) {

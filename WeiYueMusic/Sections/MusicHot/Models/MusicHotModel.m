@@ -13,5 +13,8 @@
     if ([key isEqualToString:@"id"]) {
         self.ID = value;
     }
+    if ([key isEqualToString:@"picUrl"]) {
+        self.pic_url = value;
+    }
 }
 @end
