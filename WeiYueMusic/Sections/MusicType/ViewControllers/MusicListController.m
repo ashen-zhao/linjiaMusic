@@ -130,7 +130,9 @@
     } else if ([self.from isEqualToString:@"songType"]) {
         [self readDataByFrom:[NSString stringWithFormat:@"http://api.dongting.com/channel/channel/%@/songs?size=50&page=1", self.msg_id]];
     } else {
-        [NetworkHelper JsonDataWithUrl:[NSString stringWithFormat:@"http://v1.ard.q.itlily.com/share/user_timeline?msg_ids=[%@]", self.msg_id]success:^(id data) {
+        
+        NSLog(@"%@", self.msg_id);
+        [NetworkHelper JsonDataWithUrl:[NSString stringWithFormat:@"http://api.songlist.ttpod.com/songlists/[%@]", self.msg_id]success:^(id data) {
             
             NSMutableArray *tempArr = [NSMutableArray array];
             for (NSDictionary *dict in data[@"data"]) {

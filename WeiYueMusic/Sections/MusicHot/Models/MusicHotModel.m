@@ -16,5 +16,12 @@
     if ([key isEqualToString:@"picUrl"]) {
         self.pic_url = value;
     }
+    
+    if ([key isEqualToString:@"listenCount"]) {
+        self.listen_count = value;
+    }
+    if ([key isEqualToString:@"action"]) {
+        self.ID = value[@"value"];
+    }
 }
 @end
