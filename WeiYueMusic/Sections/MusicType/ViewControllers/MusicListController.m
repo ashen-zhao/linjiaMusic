@@ -131,29 +131,34 @@
         [self readDataByFrom:[NSString stringWithFormat:@"http://api.dongting.com/channel/channel/%@/songs?size=50&page=1", self.msg_id]];
     } else {
         
-        NSLog(@"%@", self.msg_id);
-        [NetworkHelper JsonDataWithUrl:[NSString stringWithFormat:@"http://api.songlist.ttpod.com/songlists/[%@]", self.msg_id]success:^(id data) {
-            
+        [NetworkHelper JsonDataWithUrl:[NSString stringWithFormat:@"http://api.songlist.ttpod.com/songlists/%@", self.msg_id]success:^(id data) {
             NSMutableArray *tempArr = [NSMutableArray array];
-            for (NSDictionary *dict in data[@"data"]) {
+            for (NSDictionary *dict in data[@"songs"]) {
                 //存放用户信息
                 self.userDict = [NSMutableDictionary dictionaryWithDictionary:dict[@"user"]];
                 [_userDict setValue:dict[@"pics"] forKey:@"pics"];
                 for (NSDictionary *dict1 in dict[@"songlist"]) {
                     [tempArr addObject:dict1[@"_id"]];
                 }
-            }
-            [NetworkHelper JsonDataWithUrl:[NSString stringWithFormat:@"http://ting.hotchanson.com/songs/downwhite?song_id=%@", [tempArr componentsJoinedByString:@","]] success:^(id data) {
-                for (NSDictionary *dict in data[@"data"]) {
-                    MusicModel *model = [MusicModel new];
-                    [model setValuesForKeysWithDictionary:dict];
-                    
-                    [_dataSourceArr addObject:model];
-                }
-                [self.tableView reloadData];
-            } fail:^{
+                MusicModel *model = [MusicModel new];
+                [model setValuesForKeysWithDictionary:dict];
                 
-            } view:self.view parameters:nil];
+                [_dataSourceArr addObject:model];
+                
+            }
+            [self.tableView reloadData];
+            
+//            [NetworkHelper JsonDataWithUrl:[NSString stringWithFormat:@"http://ting.hotchanson.com/songs/downwhite?song_id=%@", [tempArr componentsJoinedByString:@","]] success:^(id data) {
+//                for (NSDictionary *dict in data[@"data"]) {
+//                    MusicModel *model = [MusicModel new];
+//                    [model setValuesForKeysWithDictionary:dict];
+//                    
+//                    [_dataSourceArr addObject:model];
+//                }
+//                [self.tableView reloadData];
+//            } fail:^{
+//                
+//            } view:self.view parameters:nil];
             
         } fail:^{
             

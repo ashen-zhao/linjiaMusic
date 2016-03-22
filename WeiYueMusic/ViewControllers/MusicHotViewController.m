@@ -199,8 +199,10 @@
           for (NSDictionary *dict2 in rowArr) {
               MusicHotModel *model2 = [MusicHotModel new];
               [model2 setValuesForKeysWithDictionary:dict2];
+              model2.ID = model2.action[@"value"];
               //处理0分区,含有webView
-              if (!model2.ID && ![model1.name isEqualToString:@"最新音乐"]) {
+
+              if ((!model2.ID && ![model1.name isEqualToString:@"最新音乐"]) || [model1.style isEqualToNumber:@(14)]) {
                   continue;
               }
               if ([model1.name containsString:@"网友热推"]||[model1.name containsString:@"8.0"] || [model1.name containsString:@"8.1"]) {
