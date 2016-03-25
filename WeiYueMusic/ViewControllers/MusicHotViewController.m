@@ -18,6 +18,7 @@
 #import "MusicListController.h"
 #import "NewCDController.h"
 #import "MBProgressHUD.h"
+#import "WebPageViewController.h"
 
 @interface MusicHotViewController () {
     UIImageView *imageBgk;
@@ -115,17 +116,25 @@
     if (indexPath.section == 1 && indexPath.row == 0) {
         [self pushToListByMsgID:@"300002376" title: [_dataSecion[indexPath.section] name]];
     } else if (indexPath.section == 1 && indexPath.row == 1) {
+        
         NewCDController *cdVC = [self.storyboard instantiateViewControllerWithIdentifier:@"sbCollection"];
         cdVC.navigation = self.navigation;
         cdVC.navTitle = [_dataSecion[indexPath.section] name];
         [self.navigation pushViewController:cdVC animated:YES];
+        
     } else if (indexPath.section == 2 ) {
     } else if (indexPath.section == 3) {
     } else {
-        [self pushToListByMsgID:[_dataSourceArray[indexPath.section][indexPath.row] ID]  title:[_dataSecion[indexPath.section] name]];
+        MusicHotModel *model = _dataSourceArray[indexPath.section][indexPath.row];
+        if ([model.action[@"type"] isEqualToNumber:@(1)]) {
+            WebPageViewController *web = [[WebPageViewController alloc] init];
+            web.urlString = model.action[@"value"];
+            web.navigation = self.navigation;
+            [self.navigation pushViewController:web animated:YES];
+        } else {
+            [self pushToListByMsgID:model.ID  title:[_dataSecion[indexPath.section] name]];
+        }
     }
-    
-   
 }
 
 
@@ -168,7 +177,6 @@
         listTV.navTitile = [_dataSecion[2] name];
         listTV.msg_id = [_dataSourceArray[2][row] ID];
     }
-    
     [self.navigation pushViewController:listTV animated:YES];
 }
 
@@ -205,6 +213,7 @@
               if ((!model2.ID && ![model1.name isEqualToString:@"最新音乐"]) || [model1.style isEqualToNumber:@(14)]) {
                   continue;
               }
+              
               if ([model1.name containsString:@"网友热推"]||[model1.name containsString:@"8.0"] || [model1.name containsString:@"8.1"]) {
                   continue;
               }
@@ -220,13 +229,13 @@
               [_dataSourceArray addObject:tempArr];
           }
           i++;
-          
       }
       //由于接口数据不稳定，这里处理一下
       if ([[_dataSecion[1] name] isEqualToString:@"热门歌单"]) {
           [_dataSecion exchangeObjectAtIndex:1 withObjectAtIndex:2];
           [_dataSourceArray exchangeObjectAtIndex:1 withObjectAtIndex:2];
       }
+      
       [self.tableView reloadData];
       [imageBgk removeFromSuperview];
       imageBgk = nil;
