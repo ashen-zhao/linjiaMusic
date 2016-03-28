@@ -130,8 +130,7 @@
     } else if ([self.from isEqualToString:@"songType"]) {
         [self readDataByFrom:[NSString stringWithFormat:@"http://api.dongting.com/channel/channel/%@/songs?size=50&page=1", self.msg_id]];
     } else {
-        
-        [NetworkHelper JsonDataWithUrl:[NSString stringWithFormat:@"http://api.songlist.ttpod.com/songlists/%@", self.msg_id]success:^(id data) {
+         [NetworkHelper JsonDataWithUrl:[NSString stringWithFormat:@"http://api.songlist.ttpod.com/songlists/%@", self.msg_id]success:^(id data) {
             NSMutableArray *tempArr = [NSMutableArray array];
             for (NSDictionary *dict in data[@"songs"]) {
                 //存放用户信息
@@ -142,9 +141,7 @@
                 }
                 MusicModel *model = [MusicModel new];
                 [model setValuesForKeysWithDictionary:dict];
-                
                 [_dataSourceArr addObject:model];
-                
             }
             [self.tableView reloadData];
             

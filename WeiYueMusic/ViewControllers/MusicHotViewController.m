@@ -196,46 +196,84 @@
 
   [NetworkHelper JsonDataWithUrl:@"http://api.dongting.com/frontpage/frontpage" success:^(id data) {
       NSArray *sectionArr = data[@"data"];
+      
+      
+      //这是老接口处理代码，接口数据有点乱，还经常变，需要处理的比较多
+      /*
+      //分区标识
+//      int i = 0;
+//      for (NSDictionary *dict1  in sectionArr) {
+//          MusicHotModel *model1 = [MusicHotModel new];
+//          [model1 setValuesForKeysWithDictionary:dict1];
+//          NSArray *rowArr = dict1[@"data"];
+//          NSMutableArray *tempArr = [NSMutableArray array];
+//          NSMutableArray *te = [NSMutableArray array];
+//          for (NSDictionary *dict2 in rowArr) {
+//              MusicHotModel *model2 = [MusicHotModel new];
+//              [model2 setValuesForKeysWithDictionary:dict2];
+//              model2.ID = model2.action[@"value"];
+//
+//              if ((!model2.ID && ![model1.name isEqualToString:@"最新音乐"]) || [model1.style isEqualToNumber:@(14)]) {
+//                  continue;
+//              }
+//              
+//              if ([model1.name containsString:@"网友热推"]||[model1.name containsString:@"8.0"] || [model1.name containsString:@"8.1"]) {
+//                  continue;
+//              }
+//
+//              //处理0分区,含有webView
+//              if (i == 0) {
+//                  [_imageURLArr addObject:[NSURL URLWithString:model2.pic_url]];
+//              }
+//              [te addObject:model2];
+//              [tempArr addObject:model2];
+//          }
+//          if (te.count > 0) {
+//              [_dataSecion addObject:model1];
+//              [_dataSourceArray addObject:tempArr];
+//          }
+//          i++;
+//      }
+      //
+      //      //由于接口数据不稳定，这里处理一下
+      //      if ([[_dataSecion[1] name] isEqualToString:@"热门歌单"]) {
+      //          [_dataSecion exchangeObjectAtIndex:1 withObjectAtIndex:2];
+      //          [_dataSourceArray exchangeObjectAtIndex:1 withObjectAtIndex:2];
+      //      }
+      
+  */
+      
+      //这是新接口处理代码，接口数据相对整齐多了，看来天天动听，换后天了么，哈哈
       //分区标识
       int i = 0;
-      for (NSDictionary *dict1  in sectionArr) {
-          MusicHotModel *model1 = [MusicHotModel new];
-          [model1 setValuesForKeysWithDictionary:dict1];
-          NSArray *rowArr = dict1[@"data"];
+      for (NSDictionary *dictSection  in sectionArr) {
+          MusicHotModel *modelSection = [MusicHotModel new];
+          [modelSection setValuesForKeysWithDictionary:dictSection];
+        
+          NSArray *rowArr = dictSection[@"data"];
           NSMutableArray *tempArr = [NSMutableArray array];
-          NSMutableArray *te = [NSMutableArray array];
-          for (NSDictionary *dict2 in rowArr) {
-              MusicHotModel *model2 = [MusicHotModel new];
-              [model2 setValuesForKeysWithDictionary:dict2];
-              model2.ID = model2.action[@"value"];
-              //处理0分区,含有webView
-
-              if ((!model2.ID && ![model1.name isEqualToString:@"最新音乐"]) || [model1.style isEqualToNumber:@(14)]) {
-                  continue;
-              }
-              
-              if ([model1.name containsString:@"网友热推"]||[model1.name containsString:@"8.0"] || [model1.name containsString:@"8.1"]) {
+          for (NSDictionary *dictRow in rowArr) {
+              MusicHotModel *modelRow = [MusicHotModel new];
+              [modelRow setValuesForKeysWithDictionary:dictRow];
+              modelRow.ID = modelRow.action[@"value"];
+            
+              if(!modelRow.ID) {
                   continue;
               }
               
               if (i == 0) {
-                  [_imageURLArr addObject:[NSURL URLWithString:model2.pic_url]];
+                  [_imageURLArr addObject:[NSURL URLWithString:modelRow.pic_url]];
               }
-              [te addObject:model2];
-              [tempArr addObject:model2];
+              
+              [tempArr addObject:modelRow];
           }
-          if (te.count > 0) {
-              [_dataSecion addObject:model1];
+          
+          if (tempArr.count > 0) {
               [_dataSourceArray addObject:tempArr];
+              [_dataSecion addObject:modelSection];
           }
           i++;
       }
-      //由于接口数据不稳定，这里处理一下
-      if ([[_dataSecion[1] name] isEqualToString:@"热门歌单"]) {
-          [_dataSecion exchangeObjectAtIndex:1 withObjectAtIndex:2];
-          [_dataSourceArray exchangeObjectAtIndex:1 withObjectAtIndex:2];
-      }
-      
       [self.tableView reloadData];
       [imageBgk removeFromSuperview];
       imageBgk = nil;
