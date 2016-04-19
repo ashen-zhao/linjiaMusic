@@ -217,6 +217,7 @@
 		8C2114421C1FA59600B766FD /* singer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = singer.png; sourceTree = "<group>"; };
 		8C2114431C1FA59600B766FD /* type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type.png; sourceTree = "<group>"; };
 		8C2114441C1FA59600B766FD /* week.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = week.png; sourceTree = "<group>"; };
+		8C5AFA0D1CC5DDCB00A45A9A /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = API.h; path = ../Sections/Mine/Helpers/API.h; sourceTree = "<group>"; };
 		8C98EFB91C85329C00CA5D8D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = WeiYueMusic/ViewControllers/MainViewController.h; sourceTree = SOURCE_ROOT; };
 		8C98EFBA1C85329C00CA5D8D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = WeiYueMusic/ViewControllers/MainViewController.m; sourceTree = SOURCE_ROOT; };
 		8CB356971CA541E20070BE40 /* WebPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPageViewController.h; sourceTree = "<group>"; };
@@ -724,6 +725,7 @@
 		C2D767231B4F9A780067F2EB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8C5AFA0D1CC5DDCB00A45A9A /* API.h */,
 				C2CE46051B5A325D000B01C6 /* CleanCaches.h */,
 				C2CE46061B5A325D000B01C6 /* CleanCaches.m */,
 				C2E430A31B50C5B40013A768 /* NetworkHelper.h */,

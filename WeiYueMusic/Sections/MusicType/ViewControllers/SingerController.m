@@ -92,7 +92,7 @@
 //读取数据
 - (void)readSingerData {
   
-    [NetworkHelper JsonDataWithUrl:  [NSString stringWithFormat:@"http://v1.ard.tj.itlily.com/ttpod?a=getnewttpod&id=%@&size=1000&page=1", self.singerTypeID] success:^(id data) {
+    [NetworkHelper JsonDataWithUrl:  [NSString stringWithFormat:kSingerController, self.singerTypeID] success:^(id data) {
         for (NSDictionary *dict in data[@"data"]) {
             SingerModel *model = [SingerModel new];
             [model setValuesForKeysWithDictionary:dict];

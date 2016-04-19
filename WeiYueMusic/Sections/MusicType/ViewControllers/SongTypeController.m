@@ -120,7 +120,7 @@
 #pragma mark 数据类；
 - (void)readSongTypeData {
     
-    [NetworkHelper JsonDataWithUrl:@"http://fm.api.ttpod.com/channellist?image_type=240_200" success:^(id data) {
+    [NetworkHelper JsonDataWithUrl:kSongTypeController success:^(id data) {
         
         NSMutableArray *tempArr = [NSMutableArray array];
         for (NSDictionary *dict in data[@"data"]) {

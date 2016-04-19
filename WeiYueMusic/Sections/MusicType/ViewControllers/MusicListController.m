@@ -13,6 +13,7 @@
 #import "NetworkHelper.h"
 #import "MusicModel.h"
 #import "UIImageView+WebCache.h"
+#import "API.h"
 
 @interface MusicListController ()<UITableViewDelegate, UITableViewDataSource> {
     NSInteger pIndex; //上次播放的索引
@@ -124,13 +125,13 @@
     
 //来自排行
     if ([self.from isEqualToString:@"weekMusic"]) {
-         [self readDataByFrom:[NSString stringWithFormat:@"http://api.dongting.com/channel/ranklist/%@/songs?page=1", self.msg_id]];
+         [self readDataByFrom:[NSString stringWithFormat:kMusicListControllerWeekMusic, self.msg_id]];
     } else if ([self.from isEqualToString:@"singerMusic"]) {
-        [self readDataByFrom:[NSString stringWithFormat:@"http://api.dongting.com/song/singer/%@/songs?page=1&size=50",self.msg_id]];
+        [self readDataByFrom:[NSString stringWithFormat:kMusicListControllerSingerMusic,self.msg_id]];
     } else if ([self.from isEqualToString:@"songType"]) {
-        [self readDataByFrom:[NSString stringWithFormat:@"http://api.dongting.com/channel/channel/%@/songs?size=50&page=1", self.msg_id]];
+        [self readDataByFrom:[NSString stringWithFormat:kMusicListControllerSongType, self.msg_id]];
     } else {
-         [NetworkHelper JsonDataWithUrl:[NSString stringWithFormat:@"http://api.songlist.ttpod.com/songlists/%@", self.msg_id]success:^(id data) {
+         [NetworkHelper JsonDataWithUrl:[NSString stringWithFormat:kMusicListControllerOther, self.msg_id]success:^(id data) {
             NSMutableArray *tempArr = [NSMutableArray array];
             for (NSDictionary *dict in data[@"songs"]) {
                 //存放用户信息

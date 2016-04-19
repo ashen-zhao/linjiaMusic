@@ -19,6 +19,7 @@
 #import "NewCDController.h"
 #import "MBProgressHUD.h"
 #import "WebPageViewController.h"
+#import "API.h"
 
 @interface MusicHotViewController () {
     UIImageView *imageBgk;
@@ -194,7 +195,9 @@
 //请求数据
 - (void)readHotData {
 
-  [NetworkHelper JsonDataWithUrl:@"http://api.dongting.com/frontpage/frontpage" success:^(id data) {
+
+    
+  [NetworkHelper JsonDataWithUrl:kMusicHotViewController success:^(id data) {
       NSArray *sectionArr = data[@"data"];
       
       

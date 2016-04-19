@@ -10,7 +10,6 @@
 #import "SearchController.h"
 #import "NetworkHelper.h"
 
-
 @interface OpenSearchController ()<UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, strong) NSMutableArray *dataSourceArr;
@@ -66,7 +65,7 @@
 
 #pragma mark 数据类
 - (void)readSearchData {
-    [NetworkHelper JsonDataWithUrl:@"http://so.ard.iyyin.com/sug/billboard" success:^(id data) {
+    [NetworkHelper JsonDataWithUrl:kOpenSearchController success:^(id data) {
         for (NSDictionary *dict in data[@"data"]) {
             [_dataSourceArr addObject:dict[@"val"]];
         }

@@ -12,6 +12,7 @@
 #import "MusicListController.h"
 #import "NetworkHelper.h"
 #import "WeekMusicModel.h"
+#import "API.h"
 
 @interface MusicWeekController ()<UITableViewDataSource, UITableViewDelegate> {
     UIImageView *imageBgk;
@@ -93,7 +94,7 @@
 
 #pragma mark -数据类
 - (void)readWeekMusicData {
-    [NetworkHelper JsonDataWithUrl:@"http://v1.ard.tj.itlily.com/ttpod?a=getnewttpod&id=281" success:^(id data) {
+    [NetworkHelper JsonDataWithUrl:kMusicWeekController success:^(id data) {
         for (NSDictionary *dict in data[@"data"]) {
             WeekMusicModel *model = [WeekMusicModel new];
             [model setValuesForKeysWithDictionary:dict];

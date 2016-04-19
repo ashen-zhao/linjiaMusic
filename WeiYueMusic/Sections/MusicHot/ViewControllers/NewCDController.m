@@ -12,6 +12,7 @@
 #import "NewCDModel.h"
 #import "MusicListController.h"
 #import "BottomPlayView.h"
+#import "API.h"
 
 @interface NewCDController ()<UICollectionViewDataSource, UICollectionViewDelegate> {
     UIImageView *imageBgk;
@@ -89,7 +90,7 @@
 
 #pragma mark - 读取数据
 - (void)readNewCDData {
-    [NetworkHelper JsonDataWithUrl:@"http://online.dongting.com/recomm/new_albums?page=1&size=30" success:^(id data) {
+    [NetworkHelper JsonDataWithUrl:kNewCDController success:^(id data) {
         for (NSDictionary *dict in  data[@"data"]) {
             NewCDModel *model = [NewCDModel new];
             [model setValuesForKeysWithDictionary:dict];

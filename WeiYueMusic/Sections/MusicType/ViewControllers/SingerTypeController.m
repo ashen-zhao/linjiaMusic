@@ -94,7 +94,7 @@
 #pragma mark -数据类
 //读取网络数据
 - (void)readSingerTypeData {
-    [NetworkHelper JsonDataWithUrl:@"http://v1.ard.tj.itlily.com/ttpod?a=getnewttpod&id=46" success:^(id data) {
+    [NetworkHelper JsonDataWithUrl:kSingerTypeController success:^(id data) {
         for (NSDictionary *dict in data[@"data"]) {
             SingerTypeModel *model = [SingerTypeModel new];
             [model setValuesForKeysWithDictionary:dict];

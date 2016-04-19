@@ -139,7 +139,7 @@
 - (void)readSearchData:(NSString *)keyWord {
     NSDictionary *parameDict = [NSDictionary dictionaryWithObjects:@[keyWord, @"1", @"50"] forKeys:@[@"q", @"page", @"size"]];
     
-    [NetworkHelper JsonDataWithUrl:@"http://so.ard.iyyin.com/s/song_with_out" success:^(id data) {
+    [NetworkHelper JsonDataWithUrl:kSearchController success:^(id data) {
         for (NSDictionary *dict in data[@"data"]) {
             MusicModel *model = [MusicModel new];
             [model setValuesForKeysWithDictionary:dict];
